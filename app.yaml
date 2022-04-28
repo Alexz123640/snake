@@ -1,15 +1,10 @@
-runtime: python39
-
+runtime: nodejs
+api_version: '1.0'
+threadsafe: true
 handlers:
   - url: /
-    static_files: index.html
-    upload: index.html
-    secure: always
-
-  - url: /app.js
-    static_files: app.js
-    upload: app.js
-
-  - url: /app.css
-    static_files: app.css
-    upload: app.css
+    static_files: public/index.html
+    upload: public/index.html
+  - url: /(.*)$
+    static_files: build/\1
+    upload: build/(.*)
