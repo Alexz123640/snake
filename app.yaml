@@ -1,10 +1,6 @@
 runtime: nodejs
-api_version: '1.0'
-threadsafe: true
+env: standard
+
 handlers:
-  - url: /
-    static_files: public/index.html
-    upload: public/index.html
-  - url: /(.*)$
-    static_files: build/\1
-    upload: build/(.*)
+- url: /.*
+  script: auto
